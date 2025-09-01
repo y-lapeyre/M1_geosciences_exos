@@ -1,0 +1,96 @@
+\chapter{Analyse}
+
+
+\newcommand{\E}[1]{\cdot 10^{#1}}
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\etheta}{\boldsymbol{\hat\theta}}
+\newcommand{\ephi}{\boldsymbol{\hat\phi}}
+
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\dive}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\lapl}{\nabla^2}
+
+\newcommand{\pfrac}[3][]{\dfrac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\ppfrac}[3][]{\pfrac[#1]{}{#3}\left({#2}\right)}
+\newcommand{\ffrac}[3][]{\dfrac{\mathrm d^{#1} #2}{\mathrm d#3^{#1}}}
+\newcommand{\fffrac}[3][]{\ffrac[#1]{}{#3}\left({#2}\right)}
+\newcommand{\lfrac}[2]{\dfrac{D #1}{D #2}}
+
+\newcommand{\meanh}[1]{\langle{#1}\rangle_h}
+\newcommand{\Od}[2][]{\mathcal{O}(\Delta #2^{#1})}
+
+%\numberwithin{equation}{section}
+
+
+\section*{Exercice 1}
+Donner le domaine de définition, le domaine de dérivabilité et la
+dérivée première et seconde des fonctions suivantes.
+
+Tracer l'allure de leurs courbes représentatives fonctions en recherchant les
+limites intéressantes, le signe de la dérivée première et seconde, les
+points de discontinuité de la fonction ou de ses dérivées, etc.
+
+\[\begin{aligned}
+    f_1\colon x&\mapsto\frac{3x^2+5x+2}{3x+2} &
+    f_2\colon x&\mapsto\sqrt{x}\left ( 1-\frac{1}{x}\right )  &
+    f_3\colon x&\mapsto3x^4-2x^3+5x-6\\
+    f_4\colon x&\mapsto|x^2-x-1| &
+    f_5\colon x&\mapsto(3-2x)^2(3+2x^3) &
+    f_6\colon x&\mapsto\frac{3-2x}{3+2x}\\
+    f_7\colon x&\mapsto\sqrt{4-2x^2} &
+    f_8\colon x&\mapsto\cos(2x^2+3) &
+    f_9\colon x&\mapsto x^2 e^{2x+1}\\
+    f_{10}\colon x&\mapsto\left (3x-1 \right ) ^4 &
+    f_{11}\colon x&\mapsto\ln \left ( 1+e^{-x}\right ) &
+    f_{12}\colon x&\mapsto x-\ln x-\frac{1}{x}\\
+\end{aligned}\]
+
+\section*{Exercice 2}
+Soit $\mathcal{P}$ la parabole étant la courbe représentative de $f\colon
+x\mapsto x^2-3x+1$. Calculer les coordonnées de son sommet $S$.
+
+\section*{Exercice 3}
+On consid\`ere la fonction $f$ définie par 
+\begin{equation}
+  f(x)=\frac{x^2-3x+6}{x-2}.
+\end{equation}
+Etudier cette fonction (domaine de définition, limites, tableau de variation). 
+
+Déterminer trois réels $a$, $b$ et $c$ tels que
+\begin{equation}
+  f(x)=ax+b+\frac{c}{x-2}.
+\end{equation}
+En déduire que la droite $\Delta$ d'équation $y=x-1$ est une asymptote oblique \`a la courbe
+représentative de  $f$.
+
+\section*{Exercice 4}
+Le profil gravimétrique d'une anomalie sphérique de rayon $r$, de densité
+$\Delta \rho$ et située à la profondeur $h$ est donné par la
+fonction $\Delta g$ suivante :
+
+\begin{equation}
+  \Delta g(x)=G\frac{4}{3} \pi \Delta \rho \frac{r^3 h }{(h^2+(x-3)^2)^{3/2}}.
+\end{equation}
+
+Etudier la fonction et dessiner sa courbe représentative. Donner le maximum
+$\Delta g_0$ de la fonction, et réécrivez la sous la forme $\Delta g/\Delta
+g_0$.
+
+\section*{Exercice 5}
+
+\begin{enumerate}
+    \item Calculer la série de Taylor en $0$ de la fonction exponentielle.
+        Sachant que la fonction exponentielle est entière, en déduire une
+        expression de $e$.
+    \item Calculer la série de Taylor en $0$ de $x\mapsto ax^3+bx^2+cx+d$.
+    \item Calculer le $DL_n$ en $0$ de $x\mapsto \dfrac{1}{1-x}$.
+    \item Calculer le $DL_3$ en $0$ de $x\mapsto e^{\sin x}$.
+    \item Calculer le $DL_3$ en $2$ de $x\mapsto \ln (2-\sqrt{x-1})$.
+    \item Calculer ${\displaystyle\lim_{x\to 0}\frac{\cos x-e^{-x^2/2}}{x^4}}$.
+    \item Donner le signe de $\dfrac{x+2}{2x}\ln(1+x)-1$ au voisinage de 0.
+\end{enumerate}
+
+

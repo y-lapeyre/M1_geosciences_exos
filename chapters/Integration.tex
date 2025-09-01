@@ -1,0 +1,110 @@
+\chapter{Intégration}
+\renewcommand{\textbf}[1]{\begingroup\bfseries\mathversion{bold}#1\endgroup} %pour mettre en gras même en mode mathématique !
+\renewcommand{\ExerciseName}{Exercice}
+\renewcommand{\AnswerName}{Solution exercice}
+\renewcommand{\QuestionBefore}{3mm}
+
+
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\ExerciseHeader}{%
+	\par \noindent
+	\textbf{\large \ExerciseName ~ \ExerciseHeaderNB  \ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+	\par\nopagebreak\medskip
+	}
+
+\begin{Exercise}[title={Intégrales simples}]
+	Calculer les intégrales suivantes après en avoir vérifié l’existence :
+	
+	\noindent
+	\begin{minipage}{0.5\linewidth}
+		\begin{align}
+		\int_{0}^{1} 2dx \\
+		\int_{0}^{+\infty} x^2 e^{-x} dx \\
+		\int_{0}^{1} (2x+1)^2 dx \\
+		\int_{0}^{\pi/2} \sin^6(u)\cos(u) du \\
+		\int_{-1}^{0} \frac{2}{(x^2 + 2x -3)} dx \\
+		\int_{0}^{1} \frac{x}{\sqrt{1-x^2}} dx \\
+		\int_{0}^{1} \cosh(2x)dx
+		\end{align}	
+	\end{minipage}
+	\begin{minipage}{0.5\linewidth}
+		\begin{align}
+		\int_{-\pi/4}^{\pi/4}\tan(x)dx \\
+		\int_{-1}^{1} |4x -2|dx \\
+		\int_{0}^{1} \frac{1 - x^2}{1 + x^2} dx \\
+		\int_{0}^{1} \ln(1 +x^2) dx \\
+		\int_{0}^{\pi/3} \cos^7(t)dt \\
+		\int_{0}^{1} \frac{1}{\sqrt{1+x+x^2}}dx
+		\end{align}
+	\end{minipage}
+\end{Exercise}
+
+\begin{Answer}
+\Question $f:x\longmapsto2$ est $\mathcal{C}^0[0;1]$ et I = 2
+\Question $f:x\longmapsto x^2 e^{-x}$ est $\mathcal{C}^0[0;+\infty[$. Soit a > 0, par IPP:
+
+\begin{eqnarray}
+\int_{0}^{a} x^2 e^{-x} dx & = & \Big[-x^2 e^{-x}\Big]_0^a + \int_{0}^{a} 2x e^{-x} dx \nonumber \\
+ & = & \Big[-x^2 e^{-x}\Big]_0^a + 2 \Big[-x e^{-x}\Big]_0^a + 2\int_{0}^{a} e^{-x} dx \nonumber \\
+ & = & -a^2 e^{-a} - 2 a e^{-a} -2 e^{-a} + 2 \nonumber \\
+ & \underset{a \to +\infty}\longrightarrow & 2 \nonumber \text{  car} \lim_{x \to -\infty} x^n e^x = 0
+\end{eqnarray}
+
+\Question $f:x\longmapsto (2x+1)^2$ est $\mathcal{C}^0[0;1]$ et I = $\frac{13}{3}$
+
+\Question $f:u\longmapsto \sin^6(u)\cos(u)$ est $\mathcal{C}^0[0;\frac{\pi}{2}]$. Par IPP on redémontre la formule du cours en intégrant cos et dérivant sin$^6$. I = $\frac{1}{7}$
+
+\Question $f:x\longmapsto \frac{2}{x^2 + 2x - 3}$ est $\mathcal{C}^0[-1;0]$. 
+Méthode de calcul d'intégrale de quotient de polynômes :
+\begin{enumerate}
+	\item factorisation du dénominateur $\implies x^2 + 2x - 3 = (x+3)(x-1)$
+	\item décomposition en éléments simples $\implies f(x) = \frac{2}{(x+3)(x-1)} = \frac{A}{(x+3)} + \frac{B}{(x-1)} = \frac{-1/2}{(x+3)} + \frac{1/2}{(x-1)} $
+	\item calcul de chaque intégrale avec la primitive de ln : I = $- \frac{1}{2} \ln(3)$
+\end{enumerate}
+Attention ! $\int \frac{1}{1 - x}dx = - \ln(1-x)$ donc pour intégrer deux solutions:
+\begin{enumerate}
+	\item $\int_{-1}^{0} \frac{1}{x - 1}dx = \Big[\ln|x-1|\Big]_{-1}^{0}$
+	\item $\int_{-1}^{0} \frac{1}{x - 1}dx = - \int_{-1}^{0} \frac{1}{1 - x}dx = - \Big[-\ln(1-x)\Big]_{-1}^{0} $
+\end{enumerate}
+
+\Question $f:x\longmapsto \frac{x}{\sqrt{1-x^2}}$ est $\mathcal{C}^0[0;1[$. Soit $a\in ]0;1[$ et soit le changement de variable $X = 1 - x^2$ alors $dX = -2 x dx$ et l'intégrale s'écrit :
+$$\int_{1}^{0} - \frac{dX}{2 \sqrt{X}}  = \int_{0}^{1} \frac{dX}{2 \sqrt{X}} \text{ qui est une intégrale de Riemann convergente, on a donc } I = 1$$
+
+\Question $f:x\longmapsto \cosh(2x)$ est $\mathcal{C}^0[0;1]$. Par changement de variable $X = 2x$ on a $dX = 2dx$ et I = $\frac{1}{2} \sinh(2)$
+
+\Question $f:x\longmapsto \tan(x)$ est $\mathcal{C}^0[-\frac{\pi}{4};\frac{\pi}{4}]$. $\tan$ est impaire et centrée en zéro sur cet intervalle considéré, alors I = 0
+
+\Question $f:x\longmapsto |4x-2|$ est $\mathcal{C}^0[-1;1]$. Lorsqu'on a une valeur absolue on doit découper l'intégrale selon que la fonction à l'intérieur est positive ou négative. Ici $4x-2 > 0$ pour $ x> \frac{1}{2}$ donc :
+
+$$I = \int_{-1}^{1} |4x-2| dx = - \int_{-1}^{1/2} 4x-2 dx + \int_{1/2}^{1} 4x-2 dx = 5 $$
+
+\Question $f:x\longmapsto \frac{1-x^2}{1+x^2}$ est $\mathcal{C}^0[0;1]$.
+
+$$\int_{0}^{1} \frac{1-x^2}{1+x^2} dx = \int_{0}^{1} - \frac{x^2 + 1 - 2}{1+x^2} dx = ... = -1 + 2 \arctan(1)$$
+
+\Question $f:x\longmapsto \ln(1+x^2)$ est $\mathcal{C}^0[0;1]$. Par IPP en dérivant $\ln(1+x^2)$ et intégrant 1 on a I = $\ln(2)-2+2\arctan(1)$
+
+\Question $f:x\longmapsto \cos^7(t)$ est $\mathcal{C}^0[0;\frac{\pi}{3}]$.
+\begin{eqnarray}
+\int_{0}^{\pi/3} \cos^7(t)dt & = & \int_0^{\pi/3} \cos^6(t)\cos(t)dt =  \int_0^{\pi/3} (1-\sin^2(t))^3 \cos(t) dt \nonumber \\
+\text{Par changement de variable} & & \sin(t) = x \implies dt \cos(t) = dx \nonumber\\
+ & = & \int_0^{\sqrt{3}/2} (1-x^2)^3 dx = \int_0^{\sqrt{3}/2} 1 - 3x^2 + 3x^4 - x^6 dx \nonumber \\
+ & = & \Big[x - x^3 + 3\frac{x^5}{5} - \frac{x^7}{7} \Big]_0^{\sqrt{3}/2} = \frac{\sqrt{3}}{2} - 3 \frac{\sqrt{3}}{8} + 27 \frac{\sqrt{3}}{5 * 2^5} - 27*3 \frac{\sqrt{3}}{7 * 2^7} \nonumber \\
+ & = & \frac{1341 \sqrt{3}}{4480} (????) \nonumber
+\end{eqnarray}
+
+\Question $f:x\longmapsto \frac{1}{\sqrt{1 + x + x^2}}$ est $\mathcal{C}^0[0;1]$. But : faire une factorisation forcée pour se ramener à une forme $\frac{1}{\sqrt{t^2 + 1}}$ : 
+$1 + x + x^2 = (x = \frac{1}{2})^2 + \frac{3}{4} = \frac{3}{4}\Big((\frac{16}{9}x + \frac{8}{9})^2 + 1 \Big)$ et ensuite par changement de variable $\frac{16}{9} x + \frac{8}{9} = t$  on a  $\frac{16}{9} dx = dt$  et $$I = \int_{8/9}^{24/9} \frac{\frac{9}{16} dt}{\sqrt{\frac{3}{4} (t^2 +1)}} = ... = \frac{3\sqrt{3}}{8}\Big[\mathtt{argsh}(t)\Big]_{8/9}^{24/9}$$
+
+\end{Answer}
+
+
+\newpage
+
+\shipoutAnswer %commande pour faire apparaître les solutions
+
+%\smallskip
+%\begin{center}
+%	\hyperlink{tableofcontents}{\textbf{$\bigstar$}}
+%\end{center}
+

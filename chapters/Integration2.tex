@@ -1,0 +1,96 @@
+\chapter{Intégration 2: les champs}
+
+\section*{Exercice 1: Définition et dérivées partielles}
+\begin{enumerate}
+    \item  déterminer le domaine de définition des fonctions:
+    \begin{enumerate}[a)]
+        \item $f(x, y)=\frac{\sqrt{y+x^2}}{\sqrt{y}}$
+        \item $f(x, y)=\frac{\ln (y)}{\sqrt{x-y}}$
+        \item $f(x, y)=\ln (x+y)$
+    \end{enumerate}
+    \item  La loi de Boyle Mariotte, pour une mole de gaz parfait, donne:
+    $$
+    P V=R T
+    $$
+    avec $P$ la pression du gaz, $V$ son volume, $R$ la constante des gaz parfaits et $T$ la température.
+    \begin{enumerate}[a)]
+        \item Calculer $\frac{\partial P}{\partial T}$ et $\frac{\partial P}{\partial V}$
+        \item Calculer ces deux dérivées partielles si l'on considère la relation de Van der Waals:
+        $$
+        \left(P+\frac{a}{V^2}\right)(V-b)=R T
+        $$
+        avec $a$ et $b$ deux réels.
+    \end{enumerate}
+    \item Calculer les dérivées partielles d'ordre 1 des fonctions:
+    \begin{enumerate}[a)]
+        \item $f(x, y)=y^5-3 x y$
+        \item $f(x, y)=x^2+3 x y^2-6 y^5$
+        \item $f(x, y)=x \cos \left(e^{x y}\right)$
+        \item $f(x, y)=\frac{x}{y}$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2: Differentielles}
+
+\begin{enumerate}
+    \item Sachant que la fonction $f: \mathbb{R}^2 \rightarrow \mathbb{R}$ est différentiable et que: $f(2,5)=6$, $\partial_x f(2,5)=1, \partial_y f(2,5)=-1$, donner la valeur approchée de $f(2.2,4.9)$.
+    \item Calculer les différentielles des fonctions suivantes:
+    \begin{enumerate}[a)]
+        \item $f(x, y)=\sqrt{x^2+3 y^2}$
+        \item $R=\alpha \beta^2 \cos (\gamma)$
+        \item $T=\frac{v}{1+u v w}$
+    \end{enumerate}
+    \item on mesure un rectangle et on obtient une largeur de 30 cm et une longueur de 24 cm , avec une erreur d'au plus 0.1 cm pour chaque mesure. Estimer l'aire du rectangle.
+\end{enumerate}
+
+\section*{Exercice 3: Courbes de niveau et gradient}
+
+\begin{enumerate}
+    \item Déterminer les courbes de niveau de la fonction $f(x, y)=x+y-1$ et les représenter sur un graphe.
+    \item Calculer le gradient de: $f(x, y, z)=x^2+y^2-\ln (x y z)$
+\end{enumerate}
+
+\section*{Exercice 4: Calculs d'extrema}
+déterminer les extrema locaux des applications suivantes et donner le maximum de précisions possibles sur ces extrêma:
+
+\begin{enumerate}
+    \item $f:(x, y) \mapsto x^4+x^2+y^2+y^4$
+    \item $f:(x, y) \mapsto x^3+2 x y-5 x+5 y$
+    \item $h:(x, y) \mapsto(3 x+7) e^{-\left((x+1)^2+y^2\right)}$
+\end{enumerate}
+
+\section*{Exercice 5: Intégrales de fonctions de plusieurs variables}
+1. Soit $D$ le domaine:
+
+$$
+D=\left\{(x, y) \in \mathbb{R}^2 \mid x \geq 0, y \geq 0, x+y \leq 1\right\}
+$$
+
+
+Calculer $\iint_D f(x, y) d x d y$ pour
+\begin{enumerate}[a)]
+    \item  $f(x, y)=x^2+y^2$
+    \item $f(x, y)=x y(x+y)$
+\end{enumerate}
+
+
+2. Calculer l'intégrale double $\iint_D f(x, y) d x d y$ pour:
+
+(a) $f(x, y)=x$ et $D=\left\{(x, y) \in \mathbb{R}^2 \mid y \geq 0, x-y+1 \geq 0, x+2 y-4 \leq 0\right\}$
+
+(b) $f(x, y)=x+y$ et $D=\left\{(x, y) \in \mathbb{R}^2 \mid 0 \leq x \leq 1, x^2 \leq y \leq x\right\}$
+
+3. soit $D$ le domaine: $D=\left\{(x, y) \in \mathbb{R}^2 \mid-1 \leq x \leq 1, x^2 \leq y \leq 4-x^3\right\}$. Calculer l'aire de $D$
+
+4. soit $D$ le domaine: $D=\left\{(x, y, z) \in \mathbb{R}^3 \mid x>0, y>0, z>0, x+y+z<1\right\}$. Calculer $\iiint_D(x+y+z)^2 d x d y d z$
+
+5. calculer le volume d'une partie de la sphère de centre $(0,0,0)$ et de rayon $R$, comprise entre les plans d'équation $z=h_1$ et $z=h_2$ (sachant que $R$ vérifie $R \geq h_1>h_2 \geq-R$ ).
+
+\section*{Exercice 6: coordonnées cylindriques et sphériques}
+
+
+Soit $D$ le domaine: $D=\left\{(x, y) \in \mathbb{R}^2 \mid x^2+y^2-2 x \leq 0\right\}$.
+
+(a) Exprimer $D$ en coordonnées polaires
+
+(b) Calculer $\iint_D \sqrt{x^2+y^2} d x d y$
