@@ -94,3 +94,108 @@ Soit $D$ le domaine: $D=\left\{(x, y) \in \mathbb{R}^2 \mid x^2+y^2-2 x \leq 0\r
 (a) Exprimer $D$ en coordonnées polaires
 
 (b) Calculer $\iint_D \sqrt{x^2+y^2} d x d y$
+
+
+\section*{Correction 1: Définition et dérivées partielles}
+
+\begin{enumerate}
+    \item Domaines de définition:
+    \begin{enumerate}[a)]
+        \item $\mathcal{D}_f = \{(x, y) \in \mathbb{R}^2 \mid y > 0 \text{ et } y + x^2 \geq 0\}$
+        \item $\mathcal{D}_f = \{(x, y) \in \mathbb{R}^2 \mid y > 0 \text{ et } x - y > 0\}$
+        \item $\mathcal{D}_f = \{(x, y) \in \mathbb{R}^2 \mid x + y > 0\}$
+    \end{enumerate}
+
+    \item Loi des gaz parfaits:
+    \begin{enumerate}[a)]
+        \item $P = \frac{RT}{V}$ donc:
+        $\frac{\partial P}{\partial T} = \frac{R}{V}$, $\frac{\partial P}{\partial V} = -\frac{RT}{V^2}$
+        
+        \item Van der Waals: $P = \frac{RT}{V-b} - \frac{a}{V^2}$ donc:
+        $\frac{\partial P}{\partial T} = \frac{R}{V-b}$, $\frac{\partial P}{\partial V} = -\frac{RT}{(V-b)^2} + \frac{2a}{V^3}$
+    \end{enumerate}
+
+    \item Dérivées partielles:
+    \begin{enumerate}[a)]
+        \item $\frac{\partial f}{\partial x} = -3y$, $\frac{\partial f}{\partial y} = 5y^4 - 3x$
+        \item $\frac{\partial f}{\partial x} = 2x + 3y^2$, $\frac{\partial f}{\partial y} = 6xy - 30y^4$
+        \item $\frac{\partial f}{\partial x} = \cos(e^{xy}) - xye^{xy}\sin(e^{xy})$, $\frac{\partial f}{\partial y} = -x^2e^{xy}\sin(e^{xy})$
+        \item $\frac{\partial f}{\partial x} = \frac{1}{y}$, $\frac{\partial f}{\partial y} = -\frac{x}{y^2}$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Correction 2: Différentielles}
+
+\begin{enumerate}
+    \item $f(2.2,4.9) \approx f(2,5) + \partial_x f(2,5)\cdot 0.2 + \partial_y f(2,5)\cdot (-0.1) = 6 + 0.2 - (-0.1) = 6.3$
+    
+    \item Différentielles:
+    \begin{enumerate}[a)]
+        \item $df = \frac{x}{\sqrt{x^2+3y^2}}dx + \frac{3y}{\sqrt{x^2+3y^2}}dy$
+        \item $dR = \beta^2\cos(\gamma)d\alpha + 2\alpha\beta\cos(\gamma)d\beta - \alpha\beta^2\sin(\gamma)d\gamma$
+        \item $dT = \frac{vw}{(1+uvw)^2}du + \frac{1}{(1+uvw)^2}dv - \frac{uv^2}{(1+uvw)^2}dw$
+    \end{enumerate}
+    
+    \item $A = L\times l = 30\times 24 = 720$ cm²\\
+    $dA = \frac{\partial A}{\partial L}dL + \frac{\partial A}{\partial l}dl = ldL + Ldl$\\
+    Erreur maximale: $\Delta A \approx |24\times 0.1| + |30\times 0.1| = 5.4$ cm²\\
+    Aire: $720 \pm 5.4$ cm²
+\end{enumerate}
+
+\section*{Correction 3: Courbes de niveau et gradient}
+
+\begin{enumerate}
+    \item Courbes de niveau: $x+y-1 = k$ soit $y = 1 - x + k$\\
+    Famille de droites parallèles de pente $-1$
+    
+    \item $\nabla f(x,y,z) = \left(2x - \frac{1}{x}, 2y - \frac{1}{y}, -\frac{1}{z}\right)$
+\end{enumerate}
+
+\section*{Correction 4: Calculs d'extrema}
+
+\begin{enumerate}
+    \item Point critique: $(0,0)$\\
+    Hessienne: $H(0,0) = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$ définie positive\\
+    Minimum global en $(0,0)$ avec $f(0,0)=0$
+    
+    \item Points critiques: $(1,-1)$ et $(-5/3,25/9)$\\
+    Hessienne: $H = \begin{pmatrix} 6x & 2 \\ 2 & 0 \end{pmatrix}$\\
+    En $(1,-1)$: $H = \begin{pmatrix} 6 & 2 \\ 2 & 0 \end{pmatrix}$ (indéfinie) → point selle\\
+    En $(-5/3,25/9)$: $H = \begin{pmatrix} -10 & 2 \\ 2 & 0 \end{pmatrix}$ (indéfinie) → point selle
+    
+    \item Point critique: $(-1,0)$\\
+    Maximum local en $(-1,0)$ avec $h(-1,0) = (3\times(-1)+7)e^{-0} = 4$
+\end{enumerate}
+
+\section*{Correction 5: Intégrales multiples}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}[a)]
+        \item $\int_0^1\int_0^{1-x}(x^2+y^2)dydx = \frac{1}{6}$
+        \item $\int_0^1\int_0^{1-x}xy(x+y)dydx = \frac{1}{120}$
+    \end{enumerate}
+    
+    \item 
+    \begin{enumerate}[a)]
+        \item $\int_0^2\int_{\frac{x+1}{2}}^{4-x}xdydx = \frac{7}{3}$
+        \item $\int_0^1\int_{x^2}^{x}(x+y)dydx = \frac{3}{20}$
+    \end{enumerate}
+    
+    \item Aire = $\int_{-1}^1\int_{x^2}^{4-x^3}dydx = \frac{52}{5}$
+    
+    \item $\iiint_D(x+y+z)^2dxdydz = \int_0^1\int_0^{1-x}\int_0^{1-x-y}(x+y+z)^2dzdydx = \frac{1}{60}$
+    
+    \item Volume = $\pi\int_{h_2}^{h_1}(R^2-z^2)dz = \pi\left[R^2(h_1-h_2) - \frac{h_1^3-h_2^3}{3}\right]$
+\end{enumerate}
+
+\section*{Correction 6: Coordonnées cylindriques et sphériques}
+
+\begin{enumerate}
+    \item[(a)] $x^2+y^2-2x \leq 0 \Rightarrow (x-1)^2+y^2 \leq 1$\\
+    En polaires: $x = r\cos\theta$, $y = r\sin\theta$\\
+    $(r\cos\theta-1)^2 + r^2\sin^2\theta \leq 1 \Rightarrow r^2 - 2r\cos\theta \leq 0 \Rightarrow r \leq 2\cos\theta$\\
+    Avec $\theta \in [-\frac{\pi}{2}, \frac{\pi}{2}]$
+    
+    \item[(b)] $\iint_D \sqrt{x^2+y^2}dxdy = \int_{-\pi/2}^{\pi/2}\int_0^{2\cos\theta}r\cdot rdrd\theta = \frac{32}{9}$
+\end{enumerate}
