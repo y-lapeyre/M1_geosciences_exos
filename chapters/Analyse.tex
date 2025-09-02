@@ -94,3 +94,256 @@ g_0$.
 \end{enumerate}
 
 
+\section*{Exercice 6: Développements limités}
+\subsection*{Faciles}
+Calculer les développements limités suivants :
+\begin{enumerate}
+  \item $\frac{1}{1-x}-e^x$ à l'ordre 3 en 0
+  \item $\sqrt{1-x}+\sqrt{1+x}$ à l'ordre 4 en 0
+  \item $\sin x \cos (2 x)$ à l'ordre 6 en 0
+  \item $\cos (x) \ln (1+x)$ à l'ordre 4 en 0
+  \item $\left(x^3+1\right) \sqrt{1-x}$ à l'ordre 3 en 0
+  \item $(\ln (1+x))^2$ à l'ordre 4 en 0
+\end{enumerate}
+
+\subsection*{Un peu plus dur (mais pas trop)}
+Calculer les développements limités suivants :
+
+\begin{enumerate}
+  \item $\frac{1}{1+x+x^2}$ à l'ordre 4 en 0
+  \item $\tan (x)$ à l'ordre 5 en 0
+  \item $\frac{\sin x-1}{\cos x+1}$ à l'ordre 2 en 0
+  \item $\frac{\ln (1+x)}{\sin x}$ à l'ordre 3 en 0 .
+  \item $\ln \left(\frac{\sin x}{x}\right)$ à l'ordre 4 en 0
+  \item $\exp (\sin x)$ à l'ordre 4 en 0
+  \item $(\cos x)^{\sin x}$ à l'ordre 5 en 0
+  \item $x(\cosh x)^{\frac{1}{x}}$ à l'ordre 4 en 0 .
+\end{enumerate}
+
+Pour plus d'exos corrigés sur les DL: \url{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/analyse/unevariable/dl&type=fexo}
+
+\section*{Corrigé exo 5}
+1)
+
+La fonction exponentielle est entière (développable en série entière sur $\mathbb{R}$ avec un rayon de convergence infini). Sa série de Taylor en 0 est donnée par :
+
+\[
+e^x = \sum_{n=0}^{+\infty} \frac{f^{(n)}(0)}{n!} x^n
+\]
+Or, pour tout $n \in \mathbb{N}$, $f^{(n)}(x) = e^x$, donc $f^{(n)}(0) = 1$. Ainsi :
+\[
+e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+\]
+
+Donc 
+\[
+e = e^1 = \sum_{n=0}^{+\infty} \frac{1}{n!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \cdots
+\]
+
+2)
+
+La fonction est un polynôme de degré 3.
+
+On a :
+\begin{align*}
+P(0) &= d \\
+P'(x) &= 3a x^2 + 2b x + c \quad \Rightarrow \quad P'(0) = c \\
+P''(x) &= 6a x + 2b \quad \Rightarrow \quad P''(0) = 2b \\
+P'''(x) &= 6a \quad \Rightarrow \quad P'''(0) = 6a \\
+P^{(k)}(x) &= 0 \quad \text{pour } k \geq 4
+\end{align*}
+
+Ainsi, la série de Taylor est :
+\[
+P(x) = P(0) + P'(0)x + \frac{P''(0)}{2!} x^2 + \frac{P'''(0)}{3!} x^3 = d + c x + \frac{2b}{2} x^2 + \frac{6a}{6} x^3 = d + c x + b x^2 + a x^3
+\]
+
+3)
+On utilise le développement limité de $(1+u)^\alpha$ avec $u = -x$ et $\alpha = \frac{1}{2}$.
+
+\[
+(1+u)^\alpha = 1 + \alpha u + \frac{\alpha(\alpha-1)}{2!} u^2 + \cdots + \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!} u^n + o(u^n)
+\]
+
+Ici :
+\[
+\sqrt{1-x} = (1 + (-x))^{1/2} = 1 + \frac{1}{2} (-x) + \frac{\frac{1}{2} \left(-\frac{1}{2}\right)}{2!} (-x)^2 + \cdots + \frac{\frac{1}{2} \left(-\frac{1}{2}\right) \cdots \left(\frac{1}{2} - n + 1\right)}{n!} (-x)^n + o(x^n)
+\]
+
+Simplifions les termes :
+\begin{align*}
+T_0 &= 1 \\
+T_1 &= \frac{1}{2} (-x) = -\frac{1}{2} x \\
+T_2 &= \frac{\frac{1}{2} \cdot \left(-\frac{1}{2}\right)}{2} x^2 = \frac{-1/4}{2} x^2 = -\frac{1}{8} x^2 \\
+T_3 &= \frac{\frac{1}{2} \cdot \left(-\frac{1}{2}\right) \cdot \left(-\frac{3}{2}\right)}{6} (-x)^3 = \frac{(-1/2)(-1/2)(-3/2)}{6} (-x^3) = \frac{(-3/8)}{6} (-x^3) = \frac{-3/8 \cdot (-1)}{6} x^3 = \frac{3/8}{6} x^3 = \frac{1}{16} x^3
+\end{align*}
+Attention : le signe alterne. On peut écrire le terme général :
+\[
+T_k = \binom{1/2}{k} (-x)^k = \binom{1/2}{k} (-1)^k x^k
+\]
+où on a noté le coefficient binomial "k parmi n": $\binom{n}{k} = \frac{n(n-1)\cdots(n-k+1)}{k!}$.
+
+Ainsi :
+\[
+\sqrt{1-x} = \sum_{k=0}^n \binom{1/2}{k} (-1)^k x^k + o(x^n)
+\]
+
+4)
+On compose les développements limités.
+
+D'abord, $\sin x = x - \frac{x^3}{6} + o(x^3)$.
+
+Ensuite, $e^u = 1 + u + \frac{u^2}{2} + \frac{u^3}{6} + o(u^3)$.
+
+On pose $u = \sin x = x - \frac{x^3}{6} + o(x^3)$.
+
+Alors :
+\begin{align*}
+e^{\sin x} &= 1 + \left(x - \frac{x^3}{6}\right) + \frac{1}{2} \left(x - \frac{x^3}{6}\right)^2 + \frac{1}{6} \left(x - \frac{x^3}{6}\right)^3 + o(x^3) \\
+&= 1 + x - \frac{x^3}{6} + \frac{1}{2} \left(x^2 - 2 \cdot x \cdot \frac{x^3}{6} + \left(\frac{x^3}{6}\right)^2\right) + \frac{1}{6} \left(x^3 + 3 \cdot x^2 \cdot \left(-\frac{x^3}{6}\right) + \cdots\right) + o(x^3) \\
+&= 1 + x - \frac{x^3}{6} + \frac{1}{2} \left(x^2 - \frac{x^4}{3} + \frac{x^6}{36}\right) + \frac{1}{6} \left(x^3 - \frac{x^5}{2} + \cdots\right) + o(x^3)
+\end{align*}
+On ne garde que les termes de degré $\leq 3$ :
+\begin{align*}
+&= 1 + x - \frac{x^3}{6} + \frac{1}{2} x^2 + \frac{1}{6} x^3 + o(x^3) \\
+&= 1 + x + \frac{1}{2} x^2 + \left(-\frac{1}{6} + \frac{1}{6}\right) x^3 + o(x^3) \\
+&= 1 + x + \frac{1}{2} x^2 + o(x^3)
+\end{align*}
+
+Ainsi :
+\[
+e^{\sin x} = 1 + x + \frac{x^2}{2} + o(x^3)
+\]
+
+5)
+
+On pose $x = 2 + h$, avec $h \to 0$. On cherche un DL$_3$ en $h$.
+
+Soit $f(x) = \ln(2 - \sqrt{x-1})$.
+
+Avec $x = 2 + h$, alors $x - 1 = 1 + h$, donc $\sqrt{x-1} = \sqrt{1+h}$.
+
+On a donc :
+\[
+f(2+h) = \ln(2 - \sqrt{1+h})
+\]
+
+Développons $\sqrt{1+h}$ à l'ordre 3 en 0 :
+\[
+\sqrt{1+h} = 1 + \frac{1}{2} h - \frac{1}{8} h^2 + \frac{1}{16} h^3 + o(h^3)
+\]
+
+Alors :
+\[
+2 - \sqrt{1+h} = 2 - \left(1 + \frac{1}{2} h - \frac{1}{8} h^2 + \frac{1}{16} h^3\right) + o(h^3) = 1 - \frac{1}{2} h + \frac{1}{8} h^2 - \frac{1}{16} h^3 + o(h^3)
+\]
+
+On écrit :
+\[
+2 - \sqrt{1+h} = 1 + u \quad \text{avec} \quad u = -\frac{1}{2} h + \frac{1}{8} h^2 - \frac{1}{16} h^3 + o(h^3)
+\]
+
+On a alors :
+\[
+\ln(1+u) = u - \frac{u^2}{2} + \frac{u^3}{3} + o(u^3)
+\]
+
+Calculons $u$ et ses puissances :
+\begin{align*}
+u &= -\frac{1}{2} h + \frac{1}{8} h^2 - \frac{1}{16} h^3 + o(h^3) \\
+u^2 &= \left(-\frac{1}{2} h + \frac{1}{8} h^2\right)^2 + o(h^3) = \frac{1}{4} h^2 - 2 \cdot \frac{1}{2} \cdot \frac{1}{8} h^3 + o(h^3) = \frac{1}{4} h^2 - \frac{1}{8} h^3 + o(h^3) \\
+u^3 &= \left(-\frac{1}{2} h\right)^3 + o(h^3) = -\frac{1}{8} h^3 + o(h^3)
+\end{align*}
+
+Ainsi :
+\begin{align*}
+\ln(1+u) &= \left(-\frac{1}{2} h + \frac{1}{8} h^2 - \frac{1}{16} h^3\right) - \frac{1}{2} \left(\frac{1}{4} h^2 - \frac{1}{8} h^3\right) + \frac{1}{3} \left(-\frac{1}{8} h^3\right) + o(h^3) \\
+&= -\frac{1}{2} h + \frac{1}{8} h^2 - \frac{1}{16} h^3 - \frac{1}{8} h^2 + \frac{1}{16} h^3 - \frac{1}{24} h^3 + o(h^3) \\
+&= -\frac{1}{2} h + \left(\frac{1}{8} - \frac{1}{8}\right) h^2 + \left(-\frac{1}{16} + \frac{1}{16} - \frac{1}{24}\right) h^3 + o(h^3) \\
+&= -\frac{1}{2} h - \frac{1}{24} h^3 + o(h^3)
+\end{align*}
+
+Donc :
+\[
+f(2+h) = -\frac{1}{2} h - \frac{1}{24} h^3 + o(h^3)
+\]
+Et en revenant à $x$ : $h = x-2$, donc :
+\[
+\ln(2 - \sqrt{x-1}) = -\frac{1}{2} (x-2) - \frac{1}{24} (x-2)^3 + o((x-2)^3)
+\]
+
+6)
+
+On utilise les développements limités à l'ordre 4.
+
+D'abord :
+\[
+\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{24} + o(x^4)
+\]
+
+Ensuite, pour $e^{-x^2/2}$ : on pose $u = -x^2/2$, alors $e^u = 1 + u + \frac{u^2}{2} + \frac{u^3}{6} + o(u^3)$. Comme $u = O(x^2)$, il faut aller à l'ordre 4 en $x$ : donc $e^u$ jusqu'à l'ordre $u^2$ suffit car $u^2$ est d'ordre $x^4$.
+
+Ainsi :
+\[
+e^{-x^2/2} = 1 + \left(-\frac{x^2}{2}\right) + \frac{1}{2} \left(-\frac{x^2}{2}\right)^2 + o(x^4) = 1 - \frac{x^2}{2} + \frac{1}{2} \cdot \frac{x^4}{4} + o(x^4) = 1 - \frac{x^2}{2} + \frac{x^4}{8} + o(x^4)
+\]
+
+Alors :
+\[
+\cos x - e^{-x^2/2} = \left(1 - \frac{x^2}{2} + \frac{x^4}{24}\right) - \left(1 - \frac{x^2}{2} + \frac{x^4}{8}\right) + o(x^4) = \frac{x^4}{24} - \frac{x^4}{8} + o(x^4) = \left(\frac{1}{24} - \frac{3}{24}\right) x^4 + o(x^4) = -\frac{2}{24} x^4 + o(x^4) = -\frac{1}{12} x^4 + o(x^4)
+\]
+
+Donc :
+\[
+\frac{\cos x - e^{-x^2/2}}{x^4} = -\frac{1}{12} + o(1) \to -\frac{1}{12} \quad \text{quand } x \to 0
+\]
+
+Ainsi :
+\[
+\lim_{x \to 0} \frac{\cos x - e^{-x^2/2}}{x^4} = -\frac{1}{12}
+\]
+
+7)
+
+On étudie la fonction :
+\[
+f(x) = \frac{x+2}{2x} \ln(1+x) - 1
+\]
+pour $x$ au voisinage de 0 (avec $x \neq 0$).
+
+Simplifions :
+\[
+f(x) = \frac{(x+2) \ln(1+x) - 2x}{2x}
+\]
+
+On étudie le numérateur : $N(x) = (x+2) \ln(1+x) - 2x$.
+
+Développons $\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + o(x^3)$.
+
+Alors :
+\begin{align*}
+N(x) &= (x+2) \left(x - \frac{x^2}{2} + \frac{x^3}{3}\right) - 2x + o(x^3) \\
+&= (x+2)x - (x+2)\frac{x^2}{2} + (x+2)\frac{x^3}{3} - 2x + o(x^3) \\
+&= x^2 + 2x - \frac{x^3}{2} - x^2 + \frac{x^4}{3} + \frac{2x^3}{3} - 2x + o(x^3) \\
+&= (2x - 2x) + (x^2 - x^2) + \left(-\frac{1}{2} x^3 + \frac{2}{3} x^3\right) + o(x^3) \\
+&= \left(-\frac{3}{6} + \frac{4}{6}\right) x^3 + o(x^3) = \frac{1}{6} x^3 + o(x^3)
+\end{align*}
+
+Ainsi :
+\[
+N(x) = \frac{1}{6} x^3 + o(x^3)
+\]
+
+Et le dénominateur est $D(x) = 2x$.
+
+Donc :
+\[
+f(x) = \frac{\frac{1}{6} x^3 + o(x^3)}{2x} = \frac{1}{12} x^2 + o(x^2)
+\]
+
+Ainsi, au voisinage de 0, $f(x) \sim \frac{1}{12} x^2$, qui est positif pour $x \neq 0$.
+
+Donc, au voisinage de 0 (pour $x$ proche de 0 mais non nul), $f(x) > 0$.
+
+
+

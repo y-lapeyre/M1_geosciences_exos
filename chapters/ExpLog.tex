@@ -38,3 +38,113 @@ Calculez les limites:
 \end{enumerate}
 
 
+\section*{Corrigé exo 3}
+
+
+\begin{enumerate}
+\item $\lim _{x \rightarrow+\infty} \log _a(x)$ selon la valeur de $a$
+  
+  \textbf{Réponse :}
+  \[
+  \lim _{x \rightarrow+\infty} \log _a(x) = 
+  \begin{cases}
+  +\infty & \text{si } a > 1 \\
+  -\infty & \text{si } 0 < a < 1
+  \end{cases}
+  \]
+
+\item $\lim _{x \rightarrow 0^{+}} \log _a(x)$ selon la valeur de $a$
+  
+  \textbf{Réponse :}
+  \[
+  \lim _{x \rightarrow 0^{+}} \log _a(x) = 
+  \begin{cases}
+  -\infty & \text{si } a > 1 \\
+  +\infty & \text{si } 0 < a < 1
+  \end{cases}
+  \]
+
+\item $\lim _{x \rightarrow+\infty} a^x$ selon la valeur de $a$
+  
+  \textbf{Réponse :}
+  \[
+  \lim _{x \rightarrow+\infty} a^x = 
+  \begin{cases}
+  +\infty & \text{si } a > 1 \\
+  1 & \text{si } a = 1 \\
+  0 & \text{si } 0 < a < 1
+  \end{cases}
+  \]
+
+\item $\lim _{x \rightarrow-\infty} a^x$ selon la valeur de $a$
+  
+  \textbf{Réponse :}
+  \[
+  \lim _{x \rightarrow-\infty} a^x = 
+  \begin{cases}
+  0 & \text{si } a > 1 \\
+  1 & \text{si } a = 1 \\
+  +\infty & \text{si } 0 < a < 1
+  \end{cases}
+  \]
+
+\item $\lim _{x \rightarrow+\infty} x^a$ selon la valeur de $a$
+  
+  \textbf{Réponse :}
+  \[
+  \lim _{x \rightarrow+\infty} x^a = 
+  \begin{cases}
+  +\infty & \text{si } a > 0 \\
+  1 & \text{si } a = 0 \\
+  0 & \text{si } a < 0
+  \end{cases}
+  \]
+
+\item $\lim _{x \rightarrow+\infty} \frac{x^2+\mathrm{e}^x}{\ln (x)+x^3}$
+  
+  \textbf{Réponse :} \\
+  On a une forme indéterminée $\frac{\infty}{\infty}$. \\
+  Au numérateur : $e^x$ domine $x^2$ (car $e^x$ croît plus vite que toute puissance de $x$). \\
+  Au dénominateur : $x^3$ domine $\ln(x)$ (car toute puissance positive de $x$ croît plus vite que $\ln(x)$). \\
+  Donc :
+  \[
+  \lim _{x \rightarrow+\infty} \frac{x^2+\mathrm{e}^x}{\ln (x)+x^3} = \lim _{x \rightarrow+\infty} \frac{e^x}{x^3} = +\infty
+  \]
+  car l'exponentielle croît plus vite que toute puissance de $x$.
+
+\item $\lim _{x \rightarrow 0^{+}} \frac{x+2}{x^2 \ln (x)}$
+  
+  \textbf{Réponse :} \\
+  Quand $x \to 0^+$ :
+  \begin{itemize}
+  \item Numérateur : $x + 2 \to 2$
+  \item Dénominateur : $x^2 \ln(x) \to 0 \times (-\infty)$ forme indéterminée.
+  \end{itemize}
+  On réécrit :
+  \[
+  \frac{x+2}{x^2 \ln(x)} = \frac{x}{x^2 \ln(x)} + \frac{2}{x^2 \ln(x)} = \frac{1}{x \ln(x)} + \frac{2}{x^2 \ln(x)}
+  \]
+  Quand $x \to 0^+$, $x \ln(x) \to 0$ (par croissance comparée) et $x^2 \ln(x) \to 0$ (idem). \\
+  Mais ici, les termes sont au dénominateur, donc :
+  \[
+  \frac{1}{x \ln(x)} \to -\infty \quad \text{et} \quad \frac{2}{x^2 \ln(x)} \to -\infty
+  \]
+  (car $\ln(x) < 0$ pour $x \in (0,1)$). \\
+  Ainsi :
+  \[
+  \lim _{x \rightarrow 0^{+}} \frac{x+2}{x^2 \ln (x)} = -\infty
+  \]
+
+\item $\lim _{x \rightarrow 0^{+}} x-\ln (x)$
+  
+  \textbf{Réponse :} \\
+  Quand $x \to 0^+$ :
+  \begin{itemize}
+  \item $x \to 0$
+  \item $\ln(x) \to -\infty$
+  \end{itemize}
+  Donc :
+  \[
+  \lim _{x \rightarrow 0^{+}} (x - \ln(x)) = 0 - (-\infty) = +\infty
+  \]
+\end{enumerate}
