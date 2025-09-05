@@ -60,3 +60,139 @@ Le service de dépannage d'un grand magasin dispose d'équipes intervenant sur a
     \end{itemize}
     \item En 2015, le standard a reçu une succession d'appels. On note \(U\) le premier appel reçu en retard. Quelle est la loi de \(U\) ? Quelle est son espérance ?
 \end{enumerate}
+
+\section*{Correction exercice 1:}
+
+Soient \(\mathrm{A}, \mathrm{B}, \mathrm{C}\) trois événements. Exprimer en fonction de \(\mathrm{A}, \mathrm{B}\) et C et des opérations ensemblistes les événements suivants :
+
+\begin{itemize}
+    \item A seul se produit : \(A \cap \overline{B} \cap \overline{C}\)
+    \item A et C se produisent mais pas B : \(A \cap C \cap \overline{B}\)
+    \item les trois événements se produisent : \(A \cap B \cap C\)
+    \item deux événements au moins se produisent : \((A \cap B) \cup (A \cap C) \cup (B \cap C)\)
+    \item un événement au plus se produit : \(\overline{A} \cap \overline{B} \cap \overline{C} \cup (A \cap \overline{B} \cap \overline{C}) \cup (\overline{A} \cap B \cap \overline{C}) \cup (\overline{A} \cap \overline{B} \cap C)\)
+    \item aucun des trois événements ne se produit : \(\overline{A} \cap \overline{B} \cap \overline{C}\)
+    \item deux événements exactement se produisent : \((A \cap B \cap \overline{C}) \cup (A \cap \overline{B} \cap C) \cup (\overline{A} \cap B \cap C)\)
+\end{itemize}
+
+\section*{Correction exercice 2:}
+
+On dispose d'un dé truqué sur lequel chaque face a une probabilité d'apparition proportionnelle au numéro qu'elle porte.
+
+\begin{itemize}
+\item Déterminer la probabilité d'apparition de chaque face de ce dé.
+\end{itemize}
+
+Soit \(p_i = P(\text{face } i)\). On a \(p_i = k \cdot i\) avec \(k\) constante de proportionnalité.
+
+\[\sum_{i=1}^{6} p_i = 1 \Rightarrow k(1+2+3+4+5+6) = 21k = 1 \Rightarrow k = \frac{1}{21}\]
+
+Donc : \(p_i = \frac{i}{21}\) pour \(i = 1, 2, ..., 6\)
+
+\begin{itemize}
+\item On lance deux fois ce dé. Quelle est la probabilité que la somme des points obtenus soit égale à 4 ?
+\end{itemize}
+
+Les couples donnant une somme de 4 : (1,3), (2,2), (3,1)
+
+\[P(\text{somme}=4) = P(1,3) + P(2,2) + P(3,1) = \frac{1}{21} \cdot \frac{3}{21} + \frac{2}{21} \cdot \frac{2}{21} + \frac{3}{21} \cdot \frac{1}{21} = \frac{3+4+3}{441} = \frac{10}{441}\]
+
+\section*{Correction exercice 3 :}
+
+On jette deux dés non truqués deux fois de suite.
+
+\begin{itemize}
+    \item Quelle est la probabilité d'obtenir au moins une fois un 6 ?
+\end{itemize}
+
+Probabilité de ne pas obtenir de 6 sur un lancer de deux dés : \(\frac{5}{6} \times \frac{5}{6} = \frac{25}{36}\)
+
+Probabilité de ne jamais obtenir de 6 sur deux lancers : \((\frac{25}{36})^2 = \frac{625}{1296}\)
+
+Probabilité d'obtenir au moins un 6 : \(1 - \frac{625}{1296} = \frac{671}{1296}\)
+
+\begin{itemize}
+    \item Quelle est la probabilité que la somme des 4 faces obtenues soit 6 ?
+\end{itemize}
+
+La somme minimale est 4 (quatre 1), la somme maximale est 24 (quatre 6).\\
+La somme 6 peut être obtenue avec les combinaisons suivantes :
+\begin{itemize}
+    \item 1+1+1+3 (4 permutations)
+    \item 1+1+2+2 (6 permutations)
+    \item 1+1+1+3 : \(\frac{4}{6^4} = \frac{4}{1296}\)
+    \item 1+1+2+2 : \(\frac{6}{6^4} = \frac{6}{1296}\)
+\end{itemize}
+
+Total : \(\frac{10}{1296} = \frac{5}{648}\)
+
+\section*{Correction exercice 4 : Pièce de monnaie}
+
+On possède une pièce de monnaie truquée de telle sorte que la probabilité d'obtenir pile soit 0,3.
+
+\begin{itemize}
+    \item On lance 10 fois la pièce, qu'elle est la probabilité d'obtenir 3 fois pile ?
+\end{itemize}
+
+Loi binomiale : \(X \sim \mathcal{B}(10; 0,3)\)
+
+\[P(X=3) = \binom{10}{3} (0,3)^3 (0,7)^7 = 120 \times 0,027 \times 0,0823543 \approx 0,2668\]
+
+\begin{itemize}
+    \item On lance la pièce jusqu'à ce qu'on obtenienne pile pour la première fois. Combien effectuera-t-on de lancers en moyenne ?
+\end{itemize}
+
+Loi géométrique : \(Y \sim \mathcal{G}(0,3)\)
+
+\[E[Y] = \frac{1}{p} = \frac{1}{0,3} \approx 3,33\]
+
+\section*{Correction exercice 5 : Service de dépannage}
+
+\begin{enumerate}
+    \item Un client appelle le service à 4 reprises. On désigne par \(X\) la v.a. prenant pour valeurs le nombre de fois où ce client a dû subir un retard.
+    \begin{itemize}
+        \item Déterminer la loi de probabilité de \(X\), son espérance, sa variance.
+        
+        \(X \sim \mathcal{B}(4; 0,25)\)
+        
+        \(P(X=k) = \binom{4}{k} (0,25)^k (0,75)^{4-k}\)
+        
+        \(E[X] = 4 \times 0,25 = 1\)
+        
+        \(V[X] = 4 \times 0,25 \times 0,75 = 0,75\)
+        
+        \item Calculer la probabilité de l'événement : "le client a au moins subi un retard".
+        
+        \(P(X \geq 1) = 1 - P(X=0) = 1 - (0,75)^4 = 1 - 0,3164 = 0,6836\)
+    \end{itemize}
+    
+    \item Le nombre d'appels reçus par jour est une v.a. \(Y\) qui suit une loi de Poisson de paramètre \(m\). On note \(Z\) le nombre d'appels traités en retard.
+    \begin{itemize}
+        \item Exprimer la probabilité conditionnelle de \(Z=k\) sachant que \(Y=n\).
+        
+        \(P(Z=k | Y=n) = \binom{n}{k} (0,25)^k (0,75)^{n-k}\)
+        
+        \item En déduire la probabilité de " \(Z=k\) et \(Y=n\) "
+        
+        \(P(Z=k \cap Y=n) = P(Z=k | Y=n) \cdot P(Y=n) = \binom{n}{k} (0,25)^k (0,75)^{n-k} \cdot \frac{e^{-m} m^n}{n!}\)
+        
+        \item Déterminer la loi de \(Z\).
+        
+        \(P(Z=k) = \sum_{n=k}^{\infty} P(Z=k \cap Y=n) = \sum_{n=k}^{\infty} \binom{n}{k} (0,25)^k (0,75)^{n-k} \cdot \frac{e^{-m} m^n}{n!}\)
+        
+        \(= \frac{e^{-m} (0,25)^k}{k!} \sum_{n=k}^{\infty} \frac{m^n (0,75)^{n-k}}{(n-k)!}\)
+        
+        \(= \frac{e^{-m} (0,25 m)^k}{k!} \sum_{j=0}^{\infty} \frac{(0,75 m)^j}{j!} = \frac{e^{-m} (0,25 m)^k}{k!} e^{0,75 m}\)
+        
+        \(= \frac{e^{-0,25 m} (0,25 m)^k}{k!}\)
+        
+        Donc \(Z \sim \mathcal{P}(0,25 m)\)
+    \end{itemize}
+    
+    \item En 2015, le standard a reçu une succession d'appels. On note \(U\) le premier appel reçu en retard. Quelle est la loi de \(U\) ? Quelle est son espérance ?
+    
+    \(U\) suit une loi géométrique : \(P(U=k) = (0,75)^{k-1} \cdot 0,25\)
+    
+    \(E[U] = \frac{1}{0,25} = 4\)
+\end{enumerate}
+
