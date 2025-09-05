@@ -24,7 +24,7 @@ Soit \(\mathbb{E}=\{1,2,3,4\}\)
 \section*{Exercice 3 : Tirages de boules}
 
 \begin{enumerate}
-    \item On dispose de 8 boules numérotées et de 4 sacs numérotés. On répartit les 8 boules dans les sacs. Combien y a-t-il de répartitions possibles ? Combien y a-t-il de répartitions telles qu'aucun sac ne soit vide?
+    \item On dispose de 8 boules numérotées et de 4 sacs numérotés. On répartit les 8 boules dans les sacs. Combien y a-t-il de répartitions possibles ? Combien y a-t-il de répartitions telles qu'aucun sac ne soit vide? @@@
     \item Dans une urne on place \(n\) boules blanches et une seule noire. On tire simultanément \(k\) boules Déterminer d'abord le nombre de tirages sans boules noires, ensuite le nombre de tirages avec au moins une boule noire, et pour finir le nombre de tirages possibles en tout. Qu'en déduisez-vous ?
     \item Une urne contient 10 boules noires numérotées, 5 boules blanches numérotées et 3 boules rouges numérotées elles aussi. On tire simultanément 4 boules dans l'urne.
     \item Trouvez:
@@ -109,9 +109,9 @@ Soit \(\mathbb{E}=\{1,2,3,4\}\)
     \item 
     \begin{itemize}
         \item Tirages sans boule noire: \(\binom{n}{k}\)
-        \item Tirages avec au moins une boule noire: \(\binom{n+1}{k} - \binom{n}{k}\)
+        \item Tirages avec au moins une boule noire: \(\binom{n}{k-1} - \binom{n}{k}\)
         \item Tirages totaux: \(\binom{n+1}{k}\)
-        \item On déduit que: \(\binom{n}{k} + \left[\binom{n+1}{k} - \binom{n}{k}\right] = \binom{n+1}{k}\)
+        \item On déduit que: $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
     \end{itemize}
     
     \item Urne avec 10 noires, 5 blanches, 3 rouges (total 18 boules)
