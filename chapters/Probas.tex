@@ -71,3 +71,103 @@ Un jury est composé de 10 membres tirés au sort parmi 8 hommes et 9 femmes.
 \item Monsieur X refuse de sièger avec Madame Y . Combien de jurys peut-on former dans ces conditions ?
 \item Lors d'un dîner, 4 personnes disposent leur chapeau au vestiaire. Au moment du départ, les convives un peu pressés reprennent au hasard chacun un chapeau. Combien y a-t-il de possibilités au total? Combien y a-t-il de possibilités pour que personne ne reprenne son chapeau?
 \end{enumerate}
+
+
+\section*{Correction exercice 1 : Pour récapituler}
+
+Soit \(\mathbb{E}=\{1,2,3,4\}\)
+
+\begin{enumerate}
+    \item Cardinal de \(\mathbb{E}\): \(|\mathbb{E}| = 4\)
+    \item Nombre de 2-arrangements avec répétitions: \(4^2 = 16\)
+    \item Nombre de 2-arrangements sans répétitions: \(\frac{4!}{(4-2)!} = 4 \times 3 = 12\)
+    \item Nombre de permutations sans répétitions: \(4! = 24\)
+    \item Nombre de combinaisons de 2 éléments: \(\binom{4}{2} = 6\)
+\end{enumerate}
+
+\section*{Correction exercice 2 : Cardinal d'un ensemble}
+
+\begin{enumerate}
+    \item Nombre d'élèves: \(27 + 15 - 9 = 33\)
+    \item Soit \(x\) le nombre d'élèves étudiant les 3 langues.\\
+    Par le principe d'inclusion-exclusion:\\
+    \(16 + 13 + 14 - 4 - 6 - 5 + x = 31\)\\
+    \(28 + x = 31\)\\
+    \(x = 3\)\\
+    Donc 3 élèves étudient les 3 langues.
+\end{enumerate}
+
+\section*{Correction exercice 3 : Tirages de boules}
+
+\begin{enumerate}
+    \item 
+    \begin{itemize}
+        \item Répartitions possibles: \(4^8 = 65536\)
+        \item Répartitions sans sac vide: \(\binom{8-1}{4-1} = \binom{7}{3} = 35\)
+    \end{itemize}
+    
+    \item 
+    \begin{itemize}
+        \item Tirages sans boule noire: \(\binom{n}{k}\)
+        \item Tirages avec au moins une boule noire: \(\binom{n+1}{k} - \binom{n}{k}\)
+        \item Tirages totaux: \(\binom{n+1}{k}\)
+        \item On déduit que: \(\binom{n}{k} + \left[\binom{n+1}{k} - \binom{n}{k}\right] = \binom{n+1}{k}\)
+    \end{itemize}
+    
+    \item Urne avec 10 noires, 5 blanches, 3 rouges (total 18 boules)
+    \begin{itemize}
+        \item Tirages possibles: \(\binom{18}{4} = 3060\)
+        \item Tirages avec au moins une noire: \(\binom{18}{4} - \binom{8}{4} = 3060 - 70 = 2990\)
+        \item Tirages avec autant de blanches que de rouges:\\
+        \(\binom{10}{2}\binom{5}{1}\binom{3}{1} + \binom{10}{0}\binom{5}{2}\binom{3}{2} = 45 \times 5 \times 3 + 1 \times 10 \times 3 = 675 + 30 = 705\)
+        \item Tirages avec les 3 couleurs:\\
+        \(\binom{10}{2}\binom{5}{1}\binom{3}{1} + \binom{10}{1}\binom{5}{2}\binom{3}{1} + \binom{10}{1}\binom{5}{1}\binom{3}{2} = 675 + 270 + 150 = 1095\)
+        \item Tirages avec exactement 2 couleurs:\\
+        \(\binom{10}{4} + \binom{5}{4} + \binom{3}{4} + \binom{10}{3}\binom{5}{1} + \binom{10}{3}\binom{3}{1} + \binom{5}{3}\binom{10}{1} + \binom{5}{3}\binom{3}{1} + \binom{3}{3}\binom{10}{1} + \binom{3}{3}\binom{5}{1} = 210 + 5 + 0 + 1200 + 360 + 100 + 30 + 10 + 5 = 1920\)
+    \end{itemize}
+\end{enumerate}
+
+\section*{Correction exercice 4 : Jouons avec les mots}
+
+\begin{enumerate}
+    \item Avec 10 jetons A-J:
+    \begin{itemize}
+        \item Mots de 10 lettres: \(10! = 3628800\)
+        \item BAC groupé: considérer BAC comme une seule lettre → \(8! = 40320\)
+        \item BAC dans l'ordre mais pas côte à côte: \(\frac{10!}{3!} = 604800\)
+    \end{itemize}
+    
+    \item Avec A,B,C,D,E:
+    \begin{itemize}
+        \item Mots de 5 lettres: \(5! = 120\)
+        \item Commençant par A: \(4! = 24\)
+        \item Commençant par A et finissant par B: \(3! = 6\)
+        \item A avant B: \(\frac{5!}{2} = 60\)
+    \end{itemize}
+\end{enumerate}
+
+\section*{Correction exercice 5 : Jeux de cartes}
+
+Jeu de 32 cartes, mains de 5 cartes:
+
+\begin{enumerate}
+    \item Total de mains: \(\binom{32}{5} = 201376\)
+    \item 4 as: \(\binom{4}{4}\binom{28}{1} = 28\)
+    \item 3 as et 2 rois: \(\binom{4}{3}\binom{4}{2} = 4 \times 6 = 24\)
+    \item Au moins 3 rois: \(\binom{4}{3}\binom{28}{2} + \binom{4}{4}\binom{28}{1} = 4 \times 378 + 1 \times 28 = 1512 + 28 = 1540\)
+    \item Au moins un as: \(\binom{32}{5} - \binom{28}{5} = 201376 - 98280 = 103096\)
+\end{enumerate}
+
+\section*{Correction exercice 6 : Et les gens dans tout ça ?}
+
+\begin{enumerate}
+    \item Jurys différents: \(\binom{17}{10} = 19448\)
+    \item 5 hommes et 5 femmes: \(\binom{8}{5}\binom{9}{5} = 56 \times 126 = 7056\)
+    \item Sans M. X et Mme Y ensemble:\\
+    Total - jurys avec les deux = \(\binom{17}{10} - \binom{15}{8} = 19448 - 6435 = 13013\)
+    \item Dérangements:
+    \begin{itemize}
+        \item Total: \(4! = 24\)
+        \item Personne ne reprend son chapeau: \(!4 = 9\)
+    \end{itemize}
+\end{enumerate}
